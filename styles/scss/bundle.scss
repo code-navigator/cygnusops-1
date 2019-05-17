@@ -1,0 +1,10 @@
+$color: #eec;
+$fontsize: 24px;
+
+body {
+  background-color: $color;
+  
+  p {
+    font-size: $fontsize;
+  }
+}
