@@ -1,24 +1,8 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
+<!-- Header -->
+<?php get_header(); ?>
 
-<!-- The loop -->
-<?php while(have_posts()): ?>
-  
-  <?php the_post(); ?>
-    <h1>
-      <a href="<?php the_permalink(); ?>">
-        <?php the_title(); ?>
-      </a>
-    </h1>
+<!-- Main Content -->
+<?php get_template_part( 'partials/content' ); ?>
 
-    <?php the_content(); ?>
-  <?php endwhile; ?>
-
-</body>
-</html>
+<!-- Footer -->
+<? get_footer(); ?>

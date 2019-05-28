@@ -3,7 +3,7 @@ const config = {
   srcPathCSS:         ['./styles/css/*.css'],
   srcPathSCSS:        ['./styles/scss/*.scss'],
   srcPathTemplate:    ['./templates/*.php'],
-  srcPathPHP:         ['./scripts/php/*.php'],
+  srcPathPHP:         ['./scripts/php/*.php', './templates/**/*.php'],
   destCopyPath:       ['../../themes/cygnusops/'],
   destPathFiles:      ['../../themes/cygnusops/**.*'],
   projectURL:         'http://dev.local'

@@ -1,10 +1,18 @@
-$color: #eec;
-$fontsize: 24px;
+/**
+ *  Import scss components
+ *
+ */
+@import 'components/variables.scss';
 
+/**
+ *  General Styling
+ *
+ */
 body {
   background-color: $color;
   
   p {
     font-size: $fontsize;
   }
+
 }
