@@ -10,6 +10,7 @@ import cleanCss from 'gulp-clean-css';                        // Minify css file
 import concat from 'gulp-concat';                             // Concatenate files
 import htmlmin from 'gulp-htmlmin';                           // Minify html files
 import phpmin from 'gulp-php-minify';                         // Minify php files
+import imagemin from 'gulp-imagemin';                         // Minify images
 import gulpif from 'gulp-if';                                 // Conditional filter
 
 // Import general utilities
@@ -21,6 +22,7 @@ import yargs from 'yargs';                                    // Parsing of comm
 // Constants & Variables
 const PRODUCTION = yargs.argv.prod                            // True = production mode; false = development
 var server = browserSync.create();                            // Create instance of browser sync
+sass.compiler = require('node-sass');
 
 
 /**
@@ -42,6 +44,7 @@ export const clean = (done) => {
  *
  */
 export const styles = () => {
+  console.log('Running Styles');
   var sassStream,
       cssStream
   
@@ -76,6 +79,16 @@ export const php = () => {
 }
 
 /**
+ * Minify image files
+ *  
+ */
+export const images = () => {
+  return src(config.srcPathImage,{ base: 'src' })
+    .pipe(gulpif(PRODUCTION, imagemin()))
+    .pipe(dest(config.destPathFiles));
+}
+
+/**
  * Reload browser.
  *
  * @param {function} done (call back function)
@@ -92,9 +105,11 @@ export const reload = (done) => {
  */
 export const watchForChange = () => {
   // watch(config.srcCopyPath, series(styles, reload));
-  watch(config.srcPathSCSS, series(styles, reload));
   watch(config.srcPathTemplate, series(html, reload));
-  watch(config.srcPathPHP, series(php, reload))
+  watch(config.srcPathCSS, series(styles, reload));
+  watch(config.srcPathSCSS, series(styles, reload));
+  watch(config.srcPathPHP, series(php, reload));
+  watch(config.srcPathImage, series(images, reload));
 }
 
 /**
@@ -114,5 +129,5 @@ export const serve = (done) => {
  * Start up server and watch for changes to source files.
  *
  */
-export default series(clean, styles, html, php, serve, watchForChange);
+export default series(clean, styles, html, php, images, serve, watchForChange);
 

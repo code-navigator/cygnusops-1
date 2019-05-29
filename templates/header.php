@@ -3,5 +3,5 @@
   <title>My Title</title>
   <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
   <p>Header Content</p>
