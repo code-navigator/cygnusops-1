@@ -1,0 +1,39 @@
+%banner {
+  height: 250px;
+  width: 100%;
+}
+
+%background-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+%aircraft {
+  background-image: url('./images/Fighter_Airplane_F-35C.jpg');
+  background-position-y: -295px;
+}
+
+.banner__full-image--aircraft {
+  @extend %banner;
+  @extend %aircraft;
+  @extend %background-image;
+}
+
+.block__brand {
+  color: #f3f3f3;
+}
+
+.large-text {
+  font-size: 6em;
+  font-style: oblique;
+  letter-spacing: .05em;
+}
+
+.no-spacing {
+  letter-spacing: -.3em;
+}
+
+.small-text {
+  font-size: 2em;
+  letter-spacing: .1em;
+}
