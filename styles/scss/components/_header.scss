@@ -9,14 +9,16 @@
 }
 
 %aircraft {
-  background-image: url('./images/Fighter_Airplane_F-35C.jpg');
-  background-position-y: -295px;
+  // background-image: url('./images/Fighter_Airplane_F-35C.jpg');
+  background-size: cover;
+  background-position-y: -190px;
 }
 
 .banner__full-image--aircraft {
   @extend %banner;
   @extend %aircraft;
   @extend %background-image;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .block__brand {
@@ -36,4 +38,25 @@
 .small-text {
   font-size: 2em;
   letter-spacing: .1em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+}
+
+.item {
+  flex: none;
+}
+
+
+.tagline {
+  color: #f3f3f3;
+}
+
+.navbar * {
+  display: inline;
 }
