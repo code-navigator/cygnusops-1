@@ -6,7 +6,10 @@ class Theme {
     $this->addNavMenus([
       'menu-1' => 'primary'
     ]);
-    $this->addSupport('custom-header');
+    $this->addSupport('custom-header', array(
+      'width' => 1600,
+      'height' => 250
+    ));
   }
 
   public function addStyle($handle, $src = '', $deps = array(), $ver = false, $media = 'all') {

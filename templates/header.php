@@ -22,16 +22,13 @@
         <div class="tagline">
           <?php bloginfo('description'); ?>
         </div>
+        <nav class="navbar">
+          <?php 
+            wp_nav_menu( array( 'theme_location' => 'menu-1' ) );
+          ?>
+        </nav>
       </div>
     </div>
-
-    <!-- navigation bar -->
-    
-    <nav class="navbar">
-      <?php 
-        wp_nav_menu( array( 'theme_location' => 'menu-1' ) );
-      ?>
-    </nav>
 
     <!-- /navigation-bar -->
 
