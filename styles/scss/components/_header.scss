@@ -1,39 +1,99 @@
 %banner {
-  height: 350px;
+  height: 75px;
   width: 100%;
 }
 
 %background-image {
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
 %aircraft {
   // background-image: url('./images/Fighter_Airplane_F-35C.jpg');
-  background-position-y: -100px;
+  background-size: cover;
 }
 
 .banner__full-image--aircraft {
   @extend %banner;
   @extend %aircraft;
-  @extend %background-image;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .block__brand {
-  color: #f3f3f3;
+  // color: #4d6d9a
+  color:navy;
+}
+
+.tagline {
+  // color: #4d6d9a;
+  color:navy;
 }
 
 .large-text {
-  font-size: 6em;
+  font-size: 3em;
   font-style: oblique;
   letter-spacing: .05em;
 }
 
 .no-spacing {
-  letter-spacing: -.3em;
+  letter-spacing: -.2em;
 }
 
 .small-text {
-  font-size: 2em;
-  letter-spacing: .1em;
+  font-size: 1em;
+  letter-spacing: .05em;
+}
+
+.container {
+  width: 100%;
+  align-items: center;
+}
+
+.item {
+  flex: none;
+}
+
+
+.navbar * {
+  display: inline;
+}
+
+.navbar li {
+  margin-left: 50px;
+}
+
+.trapezoid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  border-style: solid;
+  border-color: navy transparent transparent transparent;
+  border-width: 75px 75px 0 0;
+}
+
+.corner-top-right-bevel {
+  border-color:  transparent transparent navy transparent;
+  border-width: 0 75px 75px 0;
+  border-style: solid;
+  width: 20%;
+  height: 0;
+}
+
+
+.p1 {
+  font-family: 'Trebuchet MS';
+  font-weight: bold;
+  color: white;
+  margin: auto;
+  padding: 0px;
+  width: 100px;
+}
+
+.p2 {
+  font-family: 'Trebuchet MS';
+  color: white;
+  margin: auto;
+  padding: 0px;
+  width: 290px;
 }
