@@ -8,30 +8,24 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <div class="container">
+  
+  <!-- Main Toolbar -->
+    <header class="container-toolbar">
+      
+      <!-- Logo  -->
+      <div class="container-branding">
+        <p class="brand">
+          <?php echo get_bloginfo( 'name' ); ?>
+        </p>
+        <p class="tagline">
+          <?php echo get_bloginfo( 'description' ); ?>
+        </p>
+      </div><!-- .container-branding -->
 
-  <!-- site-header -->
+      <!-- Menu -->
+      <nav class="container-navigation">
+      <?php wp_nav_menu( array( 'theme_location' => 'menu-1' ) ); ?>
+      </nav>
 
-  <header>
-    <div class="banner__full-image--aircraft" style="background-image: url(<?php header_image(); ?>);">
-      <div class="container">
-        <div class="block__brand">
-          <span class="large-text" >O<span class="no-spacing">P</span></span>
-          <span class="small-text">&</span>
-          <span class="large-text" >S</span>
-        </div>
-        <div class="tagline">
-          <?php bloginfo('description'); ?>
-        </div>
-        <nav class="navbar">
-          <?php 
-            wp_nav_menu( array( 'theme_location' => 'menu-1' ) );
-          ?>
-        </nav>
-      </div>
-    </div>
-
-    <!-- /navigation-bar -->
-
-  </header>
-
-  <!-- /site-header -->
+    </header>

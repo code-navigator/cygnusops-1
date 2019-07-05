@@ -2,21 +2,7 @@
  *  Import scss components
  *
  */
-@import 'components/variables';
 @import 'components/reset';
 @import 'components/base';
 @import 'components/header';
 @import 'components/main';
-
-/**
- *  General Styling
- *
- */
-body {
-  background-color: $color;
-  
-  p {
-    font-size: $fontsize;
-  }
-
-}

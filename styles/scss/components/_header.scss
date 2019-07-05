@@ -1,68 +1,91 @@
-%banner {
-  height: 125px;
-  width: 100%;
+@import 'components/variables';
+
+%flex-row {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
 }
 
-%background-image {
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-%aircraft {
-  // background-image: url('./images/Fighter_Airplane_F-35C.jpg');
-  background-size: cover;
-  background-position-y: 0px;
-}
-
-.banner__full-image--aircraft {
-  @extend %banner;
-  @extend %aircraft;
-  @extend %background-image;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-.block__brand {
-  // color: #4d6d9a
-  color: #692075;
-}
-
-.tagline {
-  // color: #4d6d9a;
-  color: #692075;
-}
-
-.large-text {
-  font-size: 5em;
-  font-style: oblique;
-  letter-spacing: .05em;
-}
-
-.no-spacing {
-  letter-spacing: -.3em;
-}
-
-.small-text {
-  font-size: 2em;
-  letter-spacing: .1em;
-}
-
-.container {
+%flex-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 300px;
-  align-items: center;
 }
 
-.item {
-  flex: none;
+%shape-trapezoid {
+  border-color:  transparent transparent $color-tertiary transparent;
+  border-width: 0 $toolbar-height $toolbar-height 0;
+  border-style: solid;
+  height: 0;
 }
 
-
-.navbar * {
-  display: inline;
+%toolbar {
+  width: 100%;
+  height: $toolbar-height;
+  background-color: $color-secondary;
 }
 
-navbar li {
-  margin-left: 50px;
+%shadow-toolbar {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: $color-primary;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container-toolbar {
+  @extend %flex-row;
+  @extend %toolbar;
+  @extend %shadow-toolbar;
+}
+
+.container-branding {
+  @extend %flex-column;
+  @extend %shape-trapezoid;
+  width: 20%;
+}
+
+.container-navigation {
+  @extend %flex-row;
+}
+
+.brand {
+  font-size: $fontsize-large;
+  color: $color-secondary;
+  padding-top: 2em;
+}
+
+.tagline {
+  font-size: $fontsize-small;
+  color: $color-secondary;
+  padding-top: .5em;
+}
+
+.menu {
+  
+  @extend %flex-row;
+  list-style: none;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  padding-top: .05em;
+
+  li {
+    width: 165px;
+    // margin: 10px 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: $color-tertiary;
+    a {
+      text-decoration: none;
+      padding: 10px;
+      color: $color-tertiary;
+    }
+    a:hover {
+      color: $color-secondary;
+      background-color: $color-tertiary;
+    }
+  }
 }
